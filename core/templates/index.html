@@ -12,7 +12,7 @@
         <div class="grid grid-cols-3 gap-3">
             {% for item in items %}
                 <div>
-                    <a href="{% url 'detail' item.id %}">
+                    <a href="{% url 'items:detail' item.id %}">
                         <div class="embed-responsive embed-responsive-16by9">
                             <img src="{{ item.image.url }}" class="card-img-top embed-responsive-item rounded-t-xl" alt="">
                         </div>
