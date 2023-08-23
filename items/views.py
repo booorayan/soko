@@ -12,16 +12,16 @@ def items(request):
     categories = Category.objects.all()
     category_id = request.GET.get('category', 0)
     # print(category_id)
-    items = Item.objects.filter(is_sold=False)
+    iitems = Item.objects.filter(is_sold=False)
 
     if category_id:
-        items = items.filter(category_id=category_id)
+        iitems = iitems.filter(category_id=category_id)
 
     if query:
-        items = items.filter(Q(name__icontains=query) | Q(description__icontains=query))
+        iitems = iitems.filter(Q(name__icontains=query) | Q(description__icontains=query))
 
-    return render(request, 'items.html', {
-        'items': items,
+    return render(request, 'items/templates/items.html', {
+        'items': iitems,
         'query': query,
         'categories': categories,
         'category_id': int(category_id),
@@ -37,7 +37,7 @@ def detail(request, pk):
         'related_items': related_items
     }
 
-    return render(request, 'detail.html', context)
+    return render(request, 'item_detail.html', context)
 
 
 @login_required
@@ -54,7 +54,7 @@ def new(request):
     else:
         form = NewItemForm()
 
-    return render(request, 'form.html', {
+    return render(request, 'items/templates/form.html', {
         'form': form,
         'title': 'New Item',
     })
@@ -74,7 +74,7 @@ def edit(request, pk):
     else:
         form = EditItemForm(instance=item)
 
-    return render(request, 'form.html', {
+    return render(request, 'items/templates/form.html', {
         'form': form,
         'title': 'Edit Item',
     })
