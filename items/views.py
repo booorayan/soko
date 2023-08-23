@@ -20,7 +20,7 @@ def items(request):
     if query:
         iitems = iitems.filter(Q(name__icontains=query) | Q(description__icontains=query))
 
-    return render(request, 'items/templates/items.html', {
+    return render(request, 'items.html', {
         'items': iitems,
         'query': query,
         'categories': categories,
@@ -54,7 +54,7 @@ def new(request):
     else:
         form = NewItemForm()
 
-    return render(request, 'items/templates/form.html', {
+    return render(request, 'form.html', {
         'form': form,
         'title': 'New Item',
     })
@@ -74,7 +74,7 @@ def edit(request, pk):
     else:
         form = EditItemForm(instance=item)
 
-    return render(request, 'items/templates/form.html', {
+    return render(request, 'form.html', {
         'form': form,
         'title': 'Edit Item',
     })
