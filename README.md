@@ -9,7 +9,7 @@ Products are grouped by categories.
 
 ## Test
 
-To test the application, clone the repo and run the following:
+To test the application locally, clone the repo and run the following:
 
 `pip install -r requirements.txt`
 
