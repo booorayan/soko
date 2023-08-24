@@ -19,5 +19,7 @@ To test the application locally, clone the repo and run the following:
 
 `python manage.py runserver`
 
+The application is accessible at http://localhost:8000/
+
 ## Todo
 1. [] Add cart
