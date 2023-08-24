@@ -20,4 +20,4 @@ To test the application, clone the repo and run the following:
 `python manage.py runserver`
 
 ## Todo
-[] Add cart
+1. [] Add cart
