@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import logout
+from django.contrib import messages
 
 from items.models import *
 from .forms import SignupForm
@@ -37,3 +39,10 @@ def signup(request):
     }
 
     return render(request, 'signup.html', context)
+
+
+# logout function
+# def logout_request(request):
+#     logout(request)
+#     messages.info(request, "You have logged out!!")
+#     return redirect('core:index')

@@ -22,5 +22,6 @@ To test the application locally, clone the repo and run the following:
 The application is accessible at http://127.0.0.1:8000/
 
 ## Todo
-1. [] Add cart
-2. [] Sign Out
+1. [x] Sign/Log Out
+2. [] Password Reset
+3. [] Add Cart
