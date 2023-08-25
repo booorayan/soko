@@ -38,3 +38,10 @@ class SignupForm(UserCreationForm):
         'placeholder': 'Confirm password',
         'class': 'w-full py-4 px-6 rounded-xl'
     }))
+
+
+class PasswordResetForm(AuthenticationForm):
+    email = forms.CharField(widget=forms.EmailInput(attrs={
+        'placeholder': 'Your email address',
+        'class': 'w-full py-4 px-6 rounded-xl'
+    }))
