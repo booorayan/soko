@@ -23,5 +23,5 @@ The application is accessible at http://127.0.0.1:8000/
 
 ## Todo
 1. [x] Sign/Log Out
-2. [] Password Reset
+2. [x] Password Reset
 3. [] Add Cart
