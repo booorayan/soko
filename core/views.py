@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import logout
+from django.contrib.auth import logout, views
 from django.contrib import messages
+from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
 
 from items.models import *
 from .forms import SignupForm
@@ -46,3 +48,14 @@ def signup(request):
 #     logout(request)
 #     messages.info(request, "You have logged out!!")
 #     return redirect('core:index')
+
+
+class ResetPasswordView(SuccessMessageMixin, views.PasswordResetView):
+    template_name = 'password_reset.html'
+    email_template_name = 'password_reset_email.html'
+    subject_template_name = 'password_reset_subject'
+    success_message = ("We've emailed you instructions for setting your password. \""
+                       "If an account exists with the email you entered, you'll receive them shortly. \
+                       If you don't receive an email, please make sure you've entered the email you registered with, \
+                       and check your spam folder.")
+    success_url = reverse_lazy('login')
